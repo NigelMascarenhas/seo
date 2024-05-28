@@ -3,45 +3,45 @@ import { Blog } from "@/types/blog";
 const BlogData: Blog[] = [
   {
     _id: 1,
-    mainImage: "/images/blog/blog-01.png",
-    title: "Free advertising for your online business",
+    mainImage: "/images/blog/website.jpg",
+    title: "How to make your first Website.",
     metadata:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit convallis tortor.",
+      "It’s been one of my goals in 2024 to create a personal website, where I can showcase my works, blogs, and podcasts. Finally, on the 14th of March 2024, it is live!",
   },
   {
     _id: 2,
-    mainImage: "/images/blog/blog-02.png",
-    title: "9 simple ways to improve your design skills",
+    mainImage: "/images/blog/reactnative.jpg",
+    title: "React Native vs Ionic: Which is the Better Mobile App Framework",
     metadata:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit convallis tortor.",
+      "Are you looking to develop a mobile app and wondering which framework to choose? With the rise of mobile technology, developers and businesses alike are faced with the crucial decision of selecting the right framework for their app development projects. ",
   },
   {
     _id: 2,
-    mainImage: "/images/blog/blog-03.png",
-    title: "Tips to quickly improve your coding speed.",
+    mainImage: "/images/blog/AI.jpg",
+    title: "The rise of Generative AI-driven design patterns",
     metadata:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit convallis tortor.",
+      "How Generative AI advances are helping shape the future of feature design, from enhancing content interaction to more informed decision-making",
   },
   {
     _id: 1,
-    mainImage: "/images/blog/blog-03.png",
-    title: "Free advertising for your online business",
+    mainImage: "/images/blog/blockchain.jpg",
+    title: "The Rise of AI-Based Smart Contract Development: A Paradigm Shift in Blockchain Technology!",
     metadata:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit convallis tortor.",
+      "In the realm of blockchain technology, smart contracts have emerged as a revolutionary concept, automating and facilitating transactions without the need for intermediaries. ",
   },
   {
     _id: 2,
-    mainImage: "/images/blog/blog-04.png",
-    title: "9 simple ways to improve your design skills",
+    mainImage: "/images/blog/cybersecurity.jpg",
+    title: "SOAR:Revolutionizing Cybersecurity with Intelligent Automation",
     metadata:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit convallis tortor.",
+      "SOAR — Security Orchestration, Automation, and Response — a game-changing technology designed to streamline and fortify an organization’s security posture. But what exactly is SOAR, and why is it becoming a cornerstone of modern cybersecurity strategies?",
   },
   {
     _id: 2,
-    mainImage: "/images/blog/blog-01.png",
-    title: "Tips to quickly improve your coding speed.",
+    mainImage: "/images/blog/GANAI.jpg",
+    title: "5 Best Gan.ai Alternatives & Competitors for Businesses",
     metadata:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit convallis tortor.",
+      "In today’s fast-paced digital world, sales professionals are constantly searching for more effective ways to engage with prospects and close deals. Traditional text-based emails and cold calls are no longer enough to capture the attention of potential clients.",
   },
 ];
 
