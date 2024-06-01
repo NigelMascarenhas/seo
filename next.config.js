@@ -1,18 +1,17 @@
-/** @type {import('next').NextConfig} */
-
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-  images: {
-    domains: ["localhost"],
-    remotePatterns: [
+module.exports = {
+  async redirects() {
+    return [
       {
-        protocol: "https",
-        hostname: "cdn.sanity.io",
-        port: "",
+        source: '/',
+        has: [
+          {
+            type: 'host',
+            value: 'visionxtechnologies.com',
+          },
+        ],
+        destination: 'https://www.visionxtechnologies.com',
+        permanent: true,
       },
-    ],
+    ];
   },
 };
-
-module.exports = nextConfig;
