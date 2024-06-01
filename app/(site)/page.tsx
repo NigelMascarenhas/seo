@@ -16,6 +16,7 @@ import Testimonial from "@/components/Testimonial";
 export const metadata: Metadata = {
   title: "VisionX Technologies",
   description: "Welcome to VisionX Technologies",
+  keywords:"Website development, app development , software development, visionx , visionxtechnologies"
   // other metadata
 };
 
