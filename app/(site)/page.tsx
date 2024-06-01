@@ -22,6 +22,11 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main>
+      <link
+          rel="canonical"
+          href="https://visionxtechnologies.com/"
+          key="canonical"
+        />
       <Hero />
       {/* <Brands /> */}
       <Feature />
