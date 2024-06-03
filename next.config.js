@@ -1,16 +1,10 @@
+// next.config.js
 module.exports = {
-  async redirects() {
+  async rewrites() {
     return [
       {
-        source: '/',
-        has: [
-          {
-            type: 'host',
-            value: 'visionxtechnologies.com',
-          },
-        ],
-        destination: 'https://www.visionxtechnologies.com',
-        permanent: true,
+        source: '/sitemap.xml',
+        destination: '/api/sitemap',
       },
     ];
   },

@@ -3,6 +3,11 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About",
+};
 const About = () => {
   return (
     <>

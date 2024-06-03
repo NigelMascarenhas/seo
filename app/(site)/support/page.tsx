@@ -3,7 +3,10 @@ import Contact from "@/components/Contact";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "VisionX technologies",
+  title:{
+    default:"VisionX Technologies",
+    template:"%s - VisionX Technologies"
+  },
   description: "Website development , app development , software development",
   // other metadata
 };
