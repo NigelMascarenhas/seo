@@ -8,10 +8,7 @@ export const metadata: Metadata = {
     default: "VisionX Technologies | web-development,app-development",
     template: "%s - VisionX Technologies %s"
   },
-  openGraph:{
-    description: "Welcome to VisionX Technologies.At VisionX Technologies, we deliver comprehensive IT services including web development, app development, chatbot automation, and e-commerce solutions. Partner with us to transform your vision into reality and achieve unparalleled success in the digital landscape.",
-     images:['']
-  },
+  description: "At VisionX Technologies, we deliver comprehensive IT services including web development, app development, chatbot automation, and e-commerce solutions. Partner with us to transform your vision into reality and achieve unparalleled success in the digital landscape.",
   keywords: "web development,Website development, app development, software development, VisionX, VisionX Technologies",
 
   // other metadata
