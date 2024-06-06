@@ -39,7 +39,7 @@ const BlogData: Blog[] = [
   {
     _id: 2,
     mainImage: "/images/blog/GANAI.jpg",
-    title: "5 Best Gan.ai Alternatives & Competitors for Businesses",
+    title: "5 Best Gen.ai Alternatives & Competitors for Businesses",
     metadata:
       "In today’s fast-paced digital world, sales professionals are constantly searching for more effective ways to engage with prospects and close deals. Traditional text-based emails and cold calls are no longer enough to capture the attention of potential clients.",
   },

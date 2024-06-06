@@ -6,7 +6,7 @@ export const testimonialData: Testimonial[] = [
   {
     id: 1,
     name: "Priyank Shah",
-    designation: "Founter @Capflow LLP.",
+    designation: "Founder @Capflow LLP.",
     image: image1,
     content:
       "VisionX Technologies exceeded our expectations with their website development services. The team delivered a stunning, user-friendly website that significantly boosted our online presence and engagement.",
@@ -14,7 +14,7 @@ export const testimonialData: Testimonial[] = [
   {
     id: 2,
     name: "Sanket Gandhi",
-    designation: "Founter @Giggle Basket",
+    designation: "Founder @Giggle Basket",
     image: image2,
     content:
       "VisionX Technologies transformed our e-commerce platform into a seamless, user-friendly experience. Their innovative approach and attention to detail significantly boosted our online sales and customer satisfaction.",
@@ -22,7 +22,7 @@ export const testimonialData: Testimonial[] = [
   {
     id: 3,
     name: "Davinder Bhasin",
-    designation: "Founter @One Health Assist pvt. ltd.",
+    designation: "Founder @One Health Assist pvt. ltd.",
     image: image1,
     content:
       "The AI chatbot developed by VisionX Technologies has revolutionized our customer support. It provides instant, accurate responses, improving efficiency and customer satisfaction. We're thrilled with the results!",
