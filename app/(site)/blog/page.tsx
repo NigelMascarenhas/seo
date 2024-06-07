@@ -3,7 +3,6 @@ import BlogItem from "@/components/Blog/BlogItem";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://visionxtechnologies.com"),
   title: {
     default: "VisionX Technologies | web-development,app-development",
     template: "%s - VisionX Technologies %s"
