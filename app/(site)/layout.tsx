@@ -8,8 +8,10 @@ import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
 import "../globals.css";
 const inter = Inter({ subsets: ["latin"] });
-
+import Head from 'next/head';
 import ToasterContext from "../context/ToastContext";
+import GoogleAnalytics from "@/components/GoogleAnalytics/GoogleAnalytics";
+
 
 export default function RootLayout({
   children,
@@ -18,7 +20,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <Head>
+      <GoogleAnalytics />
+      {/* Other head elements */}
+    </Head>
+
       <body className={`dark:bg-black ${inter.className}`}>
+     
         <ThemeProvider
           enableSystem={false}
           attribute="class"
