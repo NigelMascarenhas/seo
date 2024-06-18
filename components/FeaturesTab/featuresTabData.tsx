@@ -6,7 +6,7 @@ const featuresTabData: FeatureTab[] = [
     title: "Expert Web Development Services",
     desc1: `Unlock the potential of your online presence with our expert web development services. Our team specializes in crafting cutting-edge websites tailored to your unique needs and objectives. From sleek designs to robust functionality, we ensure your website stands out in the digital landscape.`,
     desc2: ``,
-    image: "/images/features/web_Development.webp",
+    image: "/images/features/webdev.jpg",
     imageDark: "/images/features/webdev.jpg",
   },
   {
