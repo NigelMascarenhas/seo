@@ -1,24 +1,51 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const Contact = () => {
-  /**
-   * Source: https://www.joshwcomeau.com/react/the-perils-of-rehydration/
-   * Reason: To fix rehydration error
-   */
-  const [hasMounted, setHasMounted] = React.useState(false);
-  React.useEffect(() => {
+  const [hasMounted, setHasMounted] = useState(false);
+  const [form, setForm] = useState({
+    fullName: "",
+    email: "",
+    subject: "",
+    phoneNumber: "",
+    message: "",
+    agreed: false,
+  });
+  const [isFormValid, setIsFormValid] = useState(false);
+
+  useEffect(() => {
     setHasMounted(true);
   }, []);
+
+  useEffect(() => {
+    checkbutton();
+  }, [form]);
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setForm((prevForm) => ({
+      ...prevForm,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
+
+  const checkbutton = () => {
+    const { fullName, email, subject, phoneNumber, message, agreed } = form;
+    if (fullName && email && subject && phoneNumber && message && agreed) {
+      setIsFormValid(true);
+    } else {
+      setIsFormValid(false);
+    }
+  };
+
   if (!hasMounted) {
     return null;
   }
 
   return (
     <>
-      {/* <!-- ===== Contact Start ===== --> */}
       <section id="support" className="px-4 md:px-8 2xl:px-0">
         <div className="relative mx-auto max-w-c-1390 px-7.5 pt-10 lg:px-15 lg:pt-15 xl:px-20 xl:pt-20">
           <div className="absolute left-0 top-0 -z-1 h-2/3 w-full rounded-lg bg-gradient-to-t from-transparent to-[#dee7ff47] dark:bg-gradient-to-t dark:to-[#252A42]"></div>
@@ -44,7 +71,6 @@ const Contact = () => {
                   opacity: 0,
                   y: -20,
                 },
-
                 visible: {
                   opacity: 1,
                   y: 0,
@@ -67,41 +93,51 @@ const Contact = () => {
                 <div className="mb-7.5 flex flex-col gap-7.5 lg:flex-row lg:justify-between lg:gap-14">
                   <input
                     type="text"
-                    name="text_input_FB31B14E-BC57-4A03-9978-5F1A6EE40E41"
+                    name="fullName"
                     placeholder="Full name"
                     className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
+                    value={form.fullName}
+                    onChange={handleChange}
                   />
 
                   <input
                     type="email"
-                    name="text_input_3D85DC42-DD4A-46E2-8535-7DB47CC2AF5E"
+                    name="email"
                     placeholder="Email address"
                     className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
+                    value={form.email}
+                    onChange={handleChange}
                   />
                 </div>
 
                 <div className="mb-12.5 flex flex-col gap-7.5 lg:flex-row lg:justify-between lg:gap-14">
                   <input
                     type="text"
-                    name="text_input_26602C2A-EC4B-4F89-8F8B-167B0409F174"
+                    name="subject"
                     placeholder="Subject"
                     className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
+                    value={form.subject}
+                    onChange={handleChange}
                   />
 
                   <input
                     type="text"
-                    name="text_input_1B517299-F00F-48C7-95E2-BCD4217B8101"
+                    name="phoneNumber"
                     placeholder="Phone number"
                     className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
+                    value={form.phoneNumber}
+                    onChange={handleChange}
                   />
                 </div>
 
                 <div className="mb-11.5 flex">
                   <textarea
                     placeholder="Message"
-                    name="text_input_3CBEB085-8A08-4D2F-9B3B-149C48FF58E6"
+                    name="message"
                     rows={4}
                     className="w-full border-b border-stroke bg-transparent focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white"
+                    value={form.message}
+                    onChange={handleChange}
                   ></textarea>
                 </div>
 
@@ -110,6 +146,9 @@ const Contact = () => {
                     <input
                       id="default-checkbox"
                       type="checkbox"
+                      name="agreed"
+                      checked={form.agreed}
+                      onChange={handleChange}
                       className="peer sr-only"
                     />
                     <span className="border-gray-300 bg-gray-100 text-blue-600 dark:border-gray-600 dark:bg-gray-700 group mt-2 flex h-5 min-w-[20px] items-center justify-center rounded peer-checked:bg-primary">
@@ -139,8 +178,13 @@ const Contact = () => {
                   </div>
 
                   <button
+                    disabled={!isFormValid}
                     aria-label="send message"
-                    className="inline-flex items-center gap-2.5 rounded-full bg-black px-6 py-3 font-medium text-white duration-300 ease-in-out hover:bg-black dark:bg-btndark"
+                    className={`inline-flex items-center gap-2.5 rounded-full px-6 py-3 font-medium text-white duration-300 ease-in-out ${
+                      isFormValid
+                        ? "bg-black hover:bg-black dark:bg-btndark"
+                        : "bg-gray-500 cursor-not-allowed"
+                    }`}
                   >
                     Send Message
                     <svg
@@ -167,7 +211,6 @@ const Contact = () => {
                   opacity: 0,
                   y: -20,
                 },
-
                 visible: {
                   opacity: 1,
                   y: 0,
@@ -185,11 +228,9 @@ const Contact = () => {
 
               <div className="5 mb-7">
                 <h3 className="mb-4 text-metatitle3 font-medium text-black dark:text-white">
-                  Our Loaction
+                  Our Location
                 </h3>
-                <p>49, Dfactory      
-                  Vasai west
-                  Mumbai</p>
+                <p>49, Dfactory Vasai west Mumbai</p>
               </div>
               <div className="5 mb-7">
                 <h3 className="mb-4 text-metatitle3 font-medium text-black dark:text-white">
@@ -211,7 +252,6 @@ const Contact = () => {
           </div>
         </div>
       </section>
-      {/* <!-- ===== Contact End ===== --> */}
     </>
   );
 };
